@@ -33,3 +33,21 @@ class Solution:
         while index < length and str1[index] == str2[index]:
             index += 1
         return str1[:index]
+
+    
+code20:
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = list()
+        for ch in s:
+            if ch in ('(', '[', '{'):
+                stack.append(ch)
+            elif ch in (')', ']', '}'):
+                if stack == []:
+                    return False
+                temp = stack.pop()
+                if not ((temp == '(' and ch == ')') or
+                        (temp == '[' and ch == ']') or
+                        (temp == '{' and ch == '}')):
+                    return False
+        return stack == []

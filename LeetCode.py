@@ -62,6 +62,7 @@ code21:
     我该返回啥?
     现在不管我的下一层干了什么,又返回了什么给我, 我只要知道,假设我的工具人们都完成了任务, 那我的任务也就完成了,可以返回最终结果了
     最终结果就是我一开始接手的L1头结点+下级员工给我的大包裹,要一并交上去, 这样我的boss才能根据我给它的L1头节点往下找,检查我完成的工作
+    自己理解的：https://github.com/damuzue/LeetCodeLearn/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230316103559.png
     '''
 class ListNode:
     def __init__(self, val=0, next=None):

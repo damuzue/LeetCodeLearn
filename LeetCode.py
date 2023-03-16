@@ -146,3 +146,16 @@ class Solution:
             else:
                 left = mid_index + 1
         return left
+
+    
+code58:
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        ans, s = 0, s[::-1]
+        for word in s:
+            if space != " ":
+                ans += 1
+            else:
+                if ans:
+                    return ans
+        return ans

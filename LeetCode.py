@@ -95,3 +95,17 @@ l2 = ListNode(1, ListNode(3, ListNode(4, )))
 
 s = Solution()
 res = s.mergeTwoLists(l1, l2)
+
+code35:
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid_index = (right + left) // 2
+            if target == nums[mid_index]:
+                return mid_index
+            elif target < nums[mid_index]:
+                right = mid_index - 1
+            else:
+                left = mid_index + 1
+        return left

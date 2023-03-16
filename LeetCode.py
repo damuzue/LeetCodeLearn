@@ -96,7 +96,44 @@ l2 = ListNode(1, ListNode(3, ListNode(4, )))
 s = Solution()
 res = s.mergeTwoLists(l1, l2)
 
+code26:
+class Solution:
+    def removeDuplicates(self, nums) -> int:
+        slow, fast = 0, 1
+        while fast <= len(nums) - 1:
+            if nums[slow] == nums[fast]:
+                fast += 1
+            else:
+                slow += 1
+                nums[slow] = nums[fast] 
+        return slow + 1
+
+    
+code27:
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        a = 0
+        b = 0
+
+        while a < len(nums):
+            if nums[a] != val:
+                nums[b] = nums[a]
+                b += 1
+            a += 1
+
+        return b
+    
+       
 code35:
+'''O(n)'''
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        for i,v in enumerate(nums):
+            if v >= target:
+                return i
+            elif v < target and i == len(nums) - 1:
+                return i + 1
+'''O(logn)二分法''' 
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
         left, right = 0, len(nums) - 1
